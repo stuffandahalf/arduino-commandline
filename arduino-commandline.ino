@@ -8,7 +8,7 @@ boolean prompt = false;
 
 char argList[15][15];
 
-char *parseCommand(char (*commandBufferAddress)[50], char (*argListAddress)[15][15]);
+int parseCommand(char (*commandBufferAddress)[50], char (*argListAddress)[15][15]);
 
 void setup()
 {
@@ -51,7 +51,7 @@ void loop()
   }
 }
 
-char *parseCommand(char (*commandBufferAddress)[50], char (*argListAddress)[15][15])
+int parseCommand(char (*commandBufferAddress)[50], char (*argListAddress)[15][15])
 {
   int i = 0;
   char command[50];
@@ -86,5 +86,5 @@ char *parseCommand(char (*commandBufferAddress)[50], char (*argListAddress)[15][
   {
     Serial.print(arguments[j] + '\t');
   }
-  return command;
+  return 0;
 }
